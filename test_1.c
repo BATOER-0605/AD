@@ -1,26 +1,39 @@
 #include <stdio.h>
 
-double area_of_cylinder(double rad,double hei);
+void find_negatives(int[], int, int[]);
 
 int main(){
-    double r,h;
-    double area;
+    int i;
+    int n = 10;
+    int numbers[10];
+    int negatives[10];
 
-    printf("半径と高さを入力 : ");
-    scanf("%lf,%lf",&r,&h);
+    for (i = 0; i < n; i++) {
+        printf("%d番目の整数を入力: ", i + 1);
+        scanf("%d", &numbers[i]);
+    }
 
-    area = area_of_cylinder(r,h);
+    find_negatives(numbers, n, negatives);
 
-    printf("円柱の表面積 = %lf\n",area);
     return 0;
 }
 
-double area_of_cylinder(double rad,double hei){
-    double pi = 3.141592;
-    double area;
+void find_negatives(int numbers[], int n, int negatives[]) {
+    int i;
+    int non=0;
 
-    area = rad *rad*pi*2;
-    area+=2*rad*hei;
+    for (i = 0; i < n; i++) {
+        if (numbers[i] < 0) {
+            negatives[non] = numbers[i];
+            non++;
+        }
+    }
 
-    return area;
-}
+    printf("負の整数: ");
+
+    for (i = 0; i < non; i++) {
+        printf("%d ", negatives[i]);
+    }
+    
+    printf("\n");
+} 
