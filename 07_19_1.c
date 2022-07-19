@@ -5,8 +5,8 @@
 double scores[NOSTU][NOSUB];
 double averages[NOSTU];
 
-extern read_scores(char *);
-extern calc_averages();
+extern double read_scores(char *file_name);
+extern void calc_averages();
 
 int main(void)
 {
