@@ -2,7 +2,7 @@
 #include "data.h"
 #include "read_write.h"
 
-double scores[5][3];
+double scores[NOSTU][NOSUB];
 double averages[100];
 
 int main(void)

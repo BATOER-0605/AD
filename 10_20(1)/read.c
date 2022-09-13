@@ -34,7 +34,7 @@ void calc_averages(void)
             averages[i] += scores[i][j];
         }
         /* 合計点から平均点を計算します */
-        averages[i] /= NOSUB;
+        averages[i] /= 3;
     }
     /* 平均点を表示します */
 print_averages();

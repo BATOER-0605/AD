@@ -2,7 +2,7 @@
 #include "read_write.h"
 #include "data.h"
 
-double read_scores(char *file_name){
+double read_scores(char *file_name,int scores[][NOSUB]){
     /* カウンタ変数 */
     int i;
     /* 入力ファイルポインタ */
@@ -10,23 +10,22 @@ double read_scores(char *file_name){
     /* 入力ファイルを開きます */
     input = fopen(file_name, "r");
     /* 入力ファイルから各学生の教科点を読み込みます */
-    for (i = 0; i < 5; i++) {
-    fscanf(input, "%d %d %d\n",
-    &scores[i][0], &scores[i][1], &scores[i][2]);
+    for (i = 0; i < NOSTU; i++) {
+    fscanf(input, "%d %d %d\n",&scores[i][0], &scores[i][1], &scores[i][2]);
     }
     /* 入力ファイルを閉じます */
     fclose(input);
     /* 教科点を表示します */
-    print_scores();
+    print_scores(scores);
 }
 
-void calc_averages(void)
+void calc_averages(int scores[][NOSUB],double averages[])
 {
     /* カウンタ変数 */
     int i, j;
     
     /* 平均点を計算します */
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < NOSTU; i++) {
         /* 平均点を初期化します */
         averages[i] = 0;
         /* 合計点を計算します */
@@ -37,5 +36,5 @@ void calc_averages(void)
         averages[i] /= 3;
     }
     /* 平均点を表示します */
-print_averages();
+print_averages(averages);
 }

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "read_write.h"
 #include "data.h"
 
 void print_scores(void)
