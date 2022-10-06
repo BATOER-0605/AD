@@ -19,7 +19,7 @@ int main(){
    return 0;
 }
 
-void degree_to_radians(double*degrees,double *radians,int n){
+void degree_to_radian(double*degrees,double *radians,int n){
     int i;
 
     for(i=0;i<n;i++){
