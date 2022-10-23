@@ -1,1 +1,0 @@
-extern int data[]; /* 外部変数 */
