@@ -4,7 +4,7 @@
 
 
 struct book{
-    char name;
+    char *name;
     struct book *upper;
 };
 
@@ -42,8 +42,9 @@ int main(){
 struct book *create_node(char *name){
     struct book *b;
     b = (struct book *)malloc(sizeof(struct book));
-    b->name = (char *)malloc(strlen(name)+1);
+    b->name = (char *)malloc(strlen(name) + 1);
     strcpy(b->name,name);
+
     b->upper = NULL;
 
     printf("%sの本を手に取りました\n",b->name);
@@ -89,6 +90,6 @@ struct book *pop(struct book *s){
     second->upper = NULL;
 
     printf("%sの本を取り出しました\n",top->name);
-    
+
     return top;
 }
